@@ -91,6 +91,11 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 
         <!-- Primefaces Dependencies -->
         <dependency>
@@ -98,6 +103,17 @@
             <artifactId>primefaces</artifactId>
             <version>${prime.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.primefaces.extensions</groupId>-->
+            <!--<artifactId>primefaces-extensions</artifactId>-->
+            <!--<version>3.0.0</version>-->
+        <!--</dependency>-->
 
         <!-- JSF 2 -->
         <dependency>
@@ -121,6 +137,11 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>4.3.9.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.19.0-GA</version>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>

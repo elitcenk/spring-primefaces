@@ -15,7 +15,6 @@ public class TehlikeliMallar {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Basic(optional = false)
     @Column(name = "name")
     private String name;
     @Column(name = "description")
