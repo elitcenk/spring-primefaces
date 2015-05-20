@@ -17,7 +17,7 @@ import java.util.List;
  * Created by AKSTEST on 15/05/2015.
  */
 @Repository(value = "baseDAO")
-public class BaseDAOImpl implements BaseDAO  {
+public class BaseDAOImpl implements BaseDAO {
 
     @Qualifier("sessionFactory")
     @Autowired
