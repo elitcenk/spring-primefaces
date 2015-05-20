@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import tr.com.ecenk.tehlikeliMal.dao.BaseDAO;
+import tr.com.ecenk.tehlikeliMal.dao.BaseDAOImpl;
 import tr.com.ecenk.tehlikeliMal.domain.User;
 
 import javax.transaction.Transactional;
@@ -18,21 +20,13 @@ import java.util.List;
 @Service
 @Transactional
 public class UserService {
-    @Qualifier("sessionFactory")
+
     @Autowired
-    private SessionFactory sessionFactory;
-
-    protected Session getCurrentSession() {
-        return this.sessionFactory.getCurrentSession();
-    }
-
-
-    private List<User> userList = new ArrayList<>();
+    private BaseDAO baseDAO;
     public List<User> getAll(){
-        Criteria criteria = getCurrentSession().createCriteria(User.class);
-        return criteria.list();
+        return baseDAO.findAll(User.class);
     }
     public void save(User user){
-        getCurrentSession().save(user);
+        baseDAO.save(user);
     }
 }
