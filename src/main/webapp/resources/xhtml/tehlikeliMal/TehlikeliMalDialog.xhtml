@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TehlikelimallarDlg" widgetVar="TehlikelimallarDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTehlikelimallarTitle}">
+            <h:form id="TehlikelimallarForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tehlikeliMalController.formBean != null}">
+                        <p:outputLabel value="#{bundle.CreateTehlikelimallarLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{tehlikeliMalController.formBean.id}" title="#{bundle.CreateTehlikelimallarTitle_id}" required="true" requiredMessage="#{bundle.CreateTehlikelimallarRequiredMessage_id}" disabled="#{tehlikeliMalController.view}"/>
+                        <p:outputLabel value="#{bundle.CreateTehlikelimallarLabel_name}" for="name" />
+                        <p:inputText id="name" value="#{tehlikeliMalController.formBean.name}" title="#{bundle.CreateTehlikelimallarTitle_name}" required="true" requiredMessage="#{bundle.CreateTehlikelimallarRequiredMessage_name}" disabled="#{tehlikeliMalController.view}"/>
+                        <p:outputLabel value="#{bundle.CreateTehlikelimallarLabel_description}" for="description" />
+                        <p:inputText id="description" value="#{tehlikeliMalController.formBean.description}" title="#{bundle.CreateTehlikelimallarTitle_description}"  disabled="#{tehlikeliMalController.view}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tehlikeliMalController.save}" value="#{bundle.Save}" update="display,:TehlikelimallarListForm:datalist,:growl" oncomplete="handleSubmit(args,'TehlikelimallarDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TehlikelimallarDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
