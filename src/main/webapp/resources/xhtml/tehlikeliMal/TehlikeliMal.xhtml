@@ -22,7 +22,7 @@
                         <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{tehlikeliMalController.prepareCreate}" update=":TehlikelimallarForm" oncomplete="PF('TehlikelimallarDialog').show()"/>
                         <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" actionListener="#{tehlikeliMalController.prepareView}" update=":TehlikelimallarForm" oncomplete="PF('TehlikelimallarDialog').show()" disabled="#{empty tehlikeliMalController.formBean.id}"/>
                         <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" actionListener="#{tehlikeliMalController.prepareEdit}" update=":TehlikelimallarForm" oncomplete="PF('TehlikelimallarDialog').show()" disabled="#{empty tehlikeliMalController.formBean.id}"/>
-                        <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{tehlikeliMalController.destroy}" update=":growl,datalist" disabled="#{empty tehlikeliMalController.formBean}"/>
+                        <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{tehlikeliMalController.destroy}" update=":growl,datalist" disabled="#{empty tehlikeliMalController.formBean.id}"/>
                     </f:facet>
                     <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                     <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
@@ -38,6 +38,12 @@
                             <h:outputText value="#{bundle.Name}"/>
                         </f:facet>
                         <h:outputText value="#{item.name}"/>
+                    </p:column>
+                    <p:column filterBy="#{item.group}" sortBy="#{item.group}">
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.Group}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.group}"/>
                     </p:column>
                     <p:column filterBy="#{item.description}" sortBy="#{item.description}">
                         <f:facet name="header">

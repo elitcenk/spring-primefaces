@@ -109,6 +109,9 @@ public abstract class AbstractController<T> {
         }
     }
 
+    public BaseServiceImpl getBaseService() {
+        return baseService;
+    }
 
     public void setBaseService(BaseServiceImpl baseService) {
         this.baseService = baseService;

@@ -21,8 +21,8 @@
                 <prop key="hibernate.show_sql">true</prop>
                 <!--<prop key="hibernate.cache_provider_class">${aks.kys.hibernate.cache_provider_class}</prop>-->
                 <!--<prop key="hibernate.auto_commit">${aks.kys.hibernate.auto_commit}</prop>-->
-                <!--<prop key="hibernate.connection.charSet">${aks.kys.hibernate.charset}</prop>-->
-                <!--<prop key="hibernate.connection.defaultNChar">${aks.kys.hibernate.default_nchar}</prop>-->
+                <prop key="hibernate.connection.charSet">UTF-8</prop>
+                <prop key="hibernate.connection.defaultNChar">true</prop>
             </props>
         </property>
     </bean>

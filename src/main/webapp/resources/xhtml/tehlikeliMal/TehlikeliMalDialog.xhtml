@@ -12,12 +12,16 @@
             <h:form id="TehlikelimallarForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tehlikeliMalController.formBean != null}">
-                        <p:outputLabel value="#{bundle.Id}" for="id" />
-                        <p:inputText id="id" value="#{tehlikeliMalController.formBean.id}" required="true" requiredMessage="#{bundle.Id_required}" disabled="#{tehlikeliMalController.view}"/>
                         <p:outputLabel value="#{bundle.Name}" for="name" />
                         <p:inputText id="name" value="#{tehlikeliMalController.formBean.name}" required="true" requiredMessage="#{bundle.Name_required}" disabled="#{tehlikeliMalController.view}"/>
+                        <p:outputLabel for="group" value="#{bundle.Group}"/>
+                        <p:selectOneMenu id="group" disabled="#{tehlikeliMalController.view}" required="true" value="#{tehlikeliMalController.formBean.group}">
+                            <f:selectItem itemLabel="Seçiniz" itemValue="#{null}" noSelectionOption="true"/>
+                            <f:selectItems value="#{tehlikeliMalController.groupList}" var="grup" itemLabel="#{grup}" itemValue="#{grup}"/>
+                            <!--<p:ajax event="change" update="@form"/>-->
+                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.Description}" for="description" />
-                        <p:inputText id="description" value="#{tehlikeliMalController.formBean.description}" disabled="#{tehlikeliMalController.view}"/>
+                        <p:inputTextarea id="description" value="#{tehlikeliMalController.formBean.description}" disabled="#{tehlikeliMalController.view}" rows="6" cols="33" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{tehlikeliMalController.persist}" value="#{bundle.Save}" update="display,:TehlikelimallarListForm:datalist,:growl" oncomplete="handleSubmit(args,'TehlikelimallarDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="TehlikelimallarDialog.hide()"/>

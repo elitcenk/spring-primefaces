@@ -4,7 +4,7 @@ import tr.com.ecenk.tehlikeliMal.domain.TehlikeliMallar;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by AKSTEST on 14/05/2015.
@@ -13,6 +13,8 @@ import java.util.List;
 @ViewScoped
 public class TehlikeliMalController extends AbstractController<TehlikeliMallar> {
     private TehlikeliMallar formBean;
+
+    private List<String> groupList = new ArrayList<>();
 
     @Override
     public TehlikeliMallar getFormBean() {
@@ -24,4 +26,16 @@ public class TehlikeliMalController extends AbstractController<TehlikeliMallar> 
         this.formBean = formBean;
     }
 
+    public List<String> getGroupList() {
+        Set<String> group = new HashSet<>();
+        for(TehlikeliMallar tehlikeliMallar: formBeanList){
+            group.add(tehlikeliMallar.getGroup());
+        }
+        groupList = new ArrayList<>(group);
+        return groupList;
+    }
+
+    public void setGroupList(List<String> groupList) {
+        this.groupList = groupList;
+    }
 }
