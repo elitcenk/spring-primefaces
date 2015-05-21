@@ -14,6 +14,8 @@ import java.util.*;
 public class TehlikeliMalController extends AbstractController<TehlikeliMallar> {
     private TehlikeliMallar formBean;
 
+    private int pageNumber=1;
+
     private List<String> groupList = new ArrayList<>();
 
     @Override
@@ -38,4 +40,13 @@ public class TehlikeliMalController extends AbstractController<TehlikeliMallar> 
     public void setGroupList(List<String> groupList) {
         this.groupList = groupList;
     }
+
+    public int getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(int pageNumber) {
+        this.pageNumber = pageNumber;
+    }
+
 }

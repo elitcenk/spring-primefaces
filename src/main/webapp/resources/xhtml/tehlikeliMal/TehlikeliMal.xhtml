@@ -21,6 +21,7 @@
                     <f:facet name="header">
                         <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{tehlikeliMalController.prepareCreate}" update=":TehlikelimallarForm" oncomplete="PF('TehlikelimallarDialog').show()"/>
                         <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" actionListener="#{tehlikeliMalController.prepareView}" update=":TehlikelimallarForm" oncomplete="PF('TehlikelimallarDialog').show()" disabled="#{empty tehlikeliMalController.formBean.id}"/>
+                        <p:commandButton id="showPdfView"   icon="ui-icon-search" value="#{bundle.PdfGoster}" oncomplete="PF('PdfDialog').show()"/>
                         <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" actionListener="#{tehlikeliMalController.prepareEdit}" update=":TehlikelimallarForm" oncomplete="PF('TehlikelimallarDialog').show()" disabled="#{empty tehlikeliMalController.formBean.id}"/>
                         <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{tehlikeliMalController.destroy}" update=":growl,datalist" disabled="#{empty tehlikeliMalController.formBean.id}"/>
                     </f:facet>
@@ -56,5 +57,6 @@
         </h:form>
 
         <ui:include src="TehlikeliMalDialog.xhtml"/>
+        <ui:include src="PdfDialog.xhtml"/>
     </ui:define>
 </ui:composition>
