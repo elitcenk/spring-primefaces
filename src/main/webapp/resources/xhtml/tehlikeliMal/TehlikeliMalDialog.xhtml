@@ -13,15 +13,15 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tehlikeliMalController.formBean != null}">
                         <p:outputLabel value="#{bundle.Name}" for="name" />
-                        <p:inputText id="name" value="#{tehlikeliMalController.formBean.name}" required="true" requiredMessage="#{bundle.Name_required}" disabled="#{tehlikeliMalController.view}"/>
+                        <p:inputText id="name" value="#{tehlikeliMalController.formBean.isim}" required="true" requiredMessage="#{bundle.Name_required}" disabled="#{tehlikeliMalController.view}"/>
                         <p:outputLabel for="group" value="#{bundle.Group}"/>
-                        <p:selectOneMenu id="group" disabled="#{tehlikeliMalController.view}" required="true" value="#{tehlikeliMalController.formBean.group}">
+                        <p:selectOneMenu id="group" disabled="#{tehlikeliMalController.view}" required="true" value="#{tehlikeliMalController.formBean.sinif}">
                             <f:selectItem itemLabel="Seçiniz" itemValue="#{null}" noSelectionOption="true"/>
                             <f:selectItems value="#{tehlikeliMalController.groupList}" var="grup" itemLabel="#{grup}" itemValue="#{grup}"/>
                             <!--<p:ajax event="change" update="@form"/>-->
                         </p:selectOneMenu>
-                        <p:outputLabel value="#{bundle.Description}" for="description" />
-                        <p:inputTextarea id="description" value="#{tehlikeliMalController.formBean.description}" disabled="#{tehlikeliMalController.view}" rows="6" cols="33" />
+                        <p:outputLabel value="#{bundle.Etiket}" for="description" />
+                        <p:inputTextarea id="description" value="#{tehlikeliMalController.formBean.etiketler}" disabled="#{tehlikeliMalController.view}" rows="6" cols="33" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{tehlikeliMalController.persist}" value="#{bundle.Save}" update="display,:TehlikelimallarListForm:datalist,:growl" oncomplete="handleSubmit(args,'TehlikelimallarDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="TehlikelimallarDialog.hide()"/>

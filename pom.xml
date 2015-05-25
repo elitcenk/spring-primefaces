@@ -103,11 +103,10 @@
             <artifactId>primefaces</artifactId>
             <version>${prime.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.primefaces.themes</groupId>
             <artifactId>all-themes</artifactId>
-            <version>1.0.9</version>
+            <version>1.0.10</version>
         </dependency>
         <!--<dependency>-->
             <!--<groupId>org.primefaces.extensions</groupId>-->
@@ -189,4 +188,12 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 </project>

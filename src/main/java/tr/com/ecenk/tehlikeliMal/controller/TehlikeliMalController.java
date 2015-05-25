@@ -1,6 +1,6 @@
 package tr.com.ecenk.tehlikeliMal.controller;
 
-import tr.com.ecenk.tehlikeliMal.domain.TehlikeliMallar;
+import tr.com.ecenk.tehlikeliMal.domain.TehlikeliMal;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -11,27 +11,27 @@ import java.util.*;
  */
 @ManagedBean
 @ViewScoped
-public class TehlikeliMalController extends AbstractController<TehlikeliMallar> {
-    private TehlikeliMallar formBean;
+public class TehlikeliMalController extends AbstractController<TehlikeliMal> {
+    private TehlikeliMal formBean;
 
     private int pageNumber=1;
 
     private List<String> groupList = new ArrayList<>();
 
     @Override
-    public TehlikeliMallar getFormBean() {
+    public TehlikeliMal getFormBean() {
         return formBean;
     }
 
     @Override
-    public void setFormBean(TehlikeliMallar formBean) {
+    public void setFormBean(TehlikeliMal formBean) {
         this.formBean = formBean;
     }
 
     public List<String> getGroupList() {
         Set<String> group = new HashSet<>();
-        for(TehlikeliMallar tehlikeliMallar: formBeanList){
-            group.add(tehlikeliMallar.getGroup());
+        for(TehlikeliMal TehlikeliMal: formBeanList){
+            group.add(TehlikeliMal.getSinif());
         }
         groupList = new ArrayList<>(group);
         return groupList;

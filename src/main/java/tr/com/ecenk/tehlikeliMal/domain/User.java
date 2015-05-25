@@ -2,11 +2,14 @@ package tr.com.ecenk.tehlikeliMal.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by AKSTEST on 14/05/2015.
+ * Created by cen2013 on 01/05/2015.
  */
+
 @Entity
 @Table(name = "USERS")
 @GenericGenerator(
@@ -15,11 +18,11 @@ import javax.persistence.*;
         parameters = {@org.hibernate.annotations.Parameter(name = "sequence", value = "USERS_SQ")}
 )
 public class User extends BaseModel {
-
-    @Column(name = "username")
+    
+    @Column(name = "USERNAME", nullable = false)
     private String userName;
 
-    @Column(name = "password")
+    @Column(name = "PASSWORD", nullable = false)
     private String password;
 
     public String getUserName() {
@@ -37,5 +40,4 @@ public class User extends BaseModel {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

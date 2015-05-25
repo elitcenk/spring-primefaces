@@ -1,7 +1,6 @@
 package tr.com.ecenk.tehlikeliMal.controller;
 
 import org.hibernate.HibernateException;
-import tr.com.ecenk.tehlikeliMal.domain.TehlikeliMallar;
 import tr.com.ecenk.tehlikeliMal.service.BaseServiceImpl;
 import tr.com.ecenk.tehlikeliMal.util.JsfUtil;
 import tr.com.ecenk.tehlikeliMal.util.JsfUtil.PersistAction;
